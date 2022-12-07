@@ -1,0 +1,25 @@
+[package]
+name = "blst-msm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand = "^0"
+rand_chacha = "^0"
+ark-std = "0.3.0"
+ark-ff = "0.3.0"
+ark-ec = { version = "0.3.0", features = ["parallel"] }
+ark-bls12-377 = { version = "0.3.0" }
+bellman-cuda = { path = "bellman-cuda-rust/bellman-cuda" }
+bellman-cuda-cudart = { path = "bellman-cuda-rust/cudart" }
+bellman-cuda-cudart-sys = { path = "bellman-cuda-rust/cudart-sys" }
+rayon = "1.5"
+
+[build-dependencies]
+
+[dev-dependencies]
+criterion = { version = "0.3", features = ["html_reports"] }
+
+[[bench]]
+name = "msm"
+harness = false

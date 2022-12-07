@@ -1,0 +1,13 @@
+{
+  "name": "wasm-zkp-challenge",
+  "version": "0.1.0",
+  "files": [
+    "wasm_zkp_challenge_bg.wasm",
+    "wasm_zkp_challenge.js",
+    "wasm_zkp_challenge_bg.js",
+    "wasm_zkp_challenge.d.ts"
+  ],
+  "module": "wasm_zkp_challenge.js",
+  "types": "wasm_zkp_challenge.d.ts",
+  "sideEffects": false
+}

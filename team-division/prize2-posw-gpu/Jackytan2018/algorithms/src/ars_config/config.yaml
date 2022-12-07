@@ -1,0 +1,17 @@
+# parallel
+job_max: 12
+num_rayon_cores_global: 12
+# load balance
+msm_branch_limit: 5
+msm_branch_max: 10
+# gpu
+max_gpu_fft: 100
+max_gpu_msm: 100
+# test
+max_test: 200
+# Number of GPUs used, 
+# Use all GPUs by default: 0
+gpu_num: 0
+
+# num_threads: 8
+# process: 2

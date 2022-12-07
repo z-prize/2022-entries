@@ -1,0 +1,42 @@
+[package]
+name = "snarkvm-console-collections"
+version = "0.7.5"
+authors = [ "The Aleo Team <hello@aleo.org>" ]
+description = "Collections for a decentralized virtual machine"
+license = "GPL-3.0"
+edition = "2021"
+
+[[bench]]
+name = "merkle_tree"
+path = "benches/merkle_tree.rs"
+harness = false
+
+[dependencies.snarkvm-console-algorithms]
+path = "../algorithms"
+version = "0.7.5"
+
+[dependencies.snarkvm-console-types]
+path = "../types"
+version = "0.7.5"
+default-features = false
+features = ["field", "integers"]
+
+[dependencies.aleo-std]
+version = "0.1.14"
+default-features = false
+
+[dependencies.rayon]
+version = "1"
+optional = true
+
+[dev-dependencies.snarkvm-console-network]
+path = "../network"
+version = "0.7.5"
+
+[dev-dependencies.criterion]
+version = "0.3.5"
+
+[features]
+#default = ["parallel"]
+parallel = ["rayon"]
+timer = ["aleo-std/timer", "aleo-std/timed"]

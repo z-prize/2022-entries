@@ -1,0 +1,216 @@
+[package]
+name = "snarkvm"
+version = "0.7.5"
+authors = [ "The Aleo Team <hello@aleo.org>" ]
+description = "A decentralized virtual machine"
+homepage = "https://aleo.org"
+repository = "https://github.com/AleoHQ/snarkVM"
+keywords = [
+  "aleo",
+  "cryptography",
+  "blockchain",
+  "decentralized",
+  "zero-knowledge"
+]
+categories = [ "compilers", "cryptography", "mathematics", "wasm", "web-programming" ]
+include = [ "Cargo.toml", "snarkvm", "README.md", "LICENSE.md" ]
+license = "GPL-3.0"
+edition = "2021"
+
+[workspace]
+members = [
+  "algorithms",
+  "circuit",
+  "circuit/account",
+  "circuit/algorithms",
+  "circuit/collections",
+  "circuit/environment",
+  "circuit/environment/witness",
+  "circuit/network",
+  "circuit/program",
+  "circuit/types",
+  "circuit/types/address",
+  "circuit/types/boolean",
+  "circuit/types/field",
+  "circuit/types/group",
+  "circuit/types/integers",
+  "circuit/types/scalar",
+  "circuit/types/string",
+  "console",
+  "console/account",
+  "console/algorithms",
+  "console/collections",
+  "console/network",
+  "console/network/environment",
+  "console/program",
+  "console/types",
+  "console/types/address",
+  "console/types/boolean",
+  "console/types/field",
+  "console/types/group",
+  "console/types/integers",
+  "console/types/scalar",
+  "console/types/string",
+  "curves",
+  "dpc",
+  "fields",
+  "gadgets",
+  "parameters",
+  "r1cs",
+  "utilities",
+  "utilities/derives", # excluded from [features], for internal use primarily
+  "vm/compiler", # for internal use primarily
+  "wasm", # excluded from [features], WASM contexts will typically import this crate directly
+  ".integration" # excluded from [features], for CI only
+]
+
+[lib]
+path = "vm/lib.rs"
+
+[[bin]]
+name = "vm"
+path = "vm/cli/main.rs"
+required-features = ["cli"]
+
+[features]
+default = ["cli"]
+full = ["algorithms", "circuit", "console", "curves", "dpc", "fields", "gadgets", "parameters", "r1cs", "utilities"]
+
+## snarkVM CLI ##
+cli = ["anyhow", "circuit", "console", "clap", "colored", "rand", "self_update", "serde_json", "thiserror"]
+
+## snarkVM workspace ##
+algorithms = ["snarkvm-algorithms"]
+circuit = ["snarkvm-circuit"]
+console = ["snarkvm-console"]
+curves = ["snarkvm-curves"]
+dpc = ["snarkvm-dpc"]
+fields = ["snarkvm-fields"]
+gadgets = ["snarkvm-gadgets"]
+parameters = ["snarkvm-parameters"]
+r1cs = ["snarkvm-r1cs"]
+utilities = ["snarkvm-utilities"]
+
+## snarkVM workspace specific ##
+cuda = ["snarkvm-algorithms/cuda"]
+parameters_no_std_out = ["snarkvm-parameters/no_std_out"]
+
+## CI ##
+noconfig = []
+
+[dependencies.snarkvm-algorithms]
+path = "./algorithms"
+version = "0.7.5"
+optional = true
+
+[dependencies.snarkvm-circuit]
+path = "./circuit"
+version = "0.7.5"
+optional = true
+
+[dependencies.snarkvm-console]
+path = "./console"
+version = "0.7.5"
+optional = true
+
+[dependencies.snarkvm-curves]
+path = "./curves"
+version = "0.7.5"
+optional = true
+
+[dependencies.snarkvm-dpc]
+path = "./dpc"
+version = "0.7.5"
+optional = true
+
+[dependencies.snarkvm-fields]
+path = "./fields"
+version = "0.7.5"
+optional = true
+
+[dependencies.snarkvm-gadgets]
+path = "./gadgets"
+version = "0.7.5"
+optional = true
+
+[dependencies.snarkvm-parameters]
+path = "./parameters"
+version = "0.7.5"
+optional = true
+
+[dependencies.snarkvm-r1cs]
+path = "./r1cs"
+version = "0.7.5"
+optional = true
+
+[dependencies.snarkvm-utilities]
+path = "./utilities"
+version = "0.7.5"
+optional = true
+
+[dependencies.snarkvm-compiler]
+path = "./vm/compiler"
+version = "0.7.5"
+
+[dependencies.anyhow]
+version = "1.0.57"
+optional = true
+
+[dependencies.clap]
+version = "3.1"
+features = ["derive"]
+optional = true
+
+[dependencies.colored]
+version = "2"
+optional = true
+
+[dependencies.rand]
+version = "0.8"
+optional = true
+
+[dependencies.self_update]
+version = "0.30"
+optional = true
+
+[dependencies.serde_json]
+version = "1.0"
+optional = true
+
+[dependencies.thiserror]
+version = "1.0"
+optional = true
+
+[dev-dependencies.rusty-hook]
+version = "0.11.2"
+
+[dev-dependencies.tempfile]
+version = "3.3"
+
+[build-dependencies.walkdir]
+version = "2"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+incremental = true
+
+[profile.bench]
+opt-level = 3
+debug = false
+rpath = false
+lto = "thin"
+incremental = true
+debug-assertions = false
+
+[profile.dev]
+opt-level = 3
+lto = "thin"
+incremental = true
+
+[profile.test]
+opt-level = 3
+lto = "thin"
+incremental = true
+debug = true
+debug-assertions = true

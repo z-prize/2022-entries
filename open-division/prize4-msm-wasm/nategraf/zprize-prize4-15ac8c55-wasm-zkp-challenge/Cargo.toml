@@ -1,0 +1,152 @@
+[package]
+name = "wasm-zkp-challenge"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# `wasm-opt` is on by default in for the release profile, but it can be
+# disabled by setting it to `false`
+# TODO(victor): Should this be enabled?
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+blake3 = { version = "1.3.1", default-features = false }
+bytes = { version = "1.1.0", default-features = false }
+clap = { version = "3.2.8", features = ["std", "derive"], optional=true }
+thiserror = { version = "1.0.15", default-features = false }
+
+# wasm dependencies
+# If using a locally modified build of wasm-bindgen, change the version to an unpulbished version
+# (e.g. 0.2.84 at this time of writing) to ensure that wasm-pack does not attempt to download a
+# prebuilt version.
+wasm-bindgen = { version = "0.2.83", default-features = false }
+
+# The `console_error_panic_hook` crate provides better debugging of panics by
+# logging them with `console.error`. This is great for development, but requires
+# all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
+# code size or performance when deploying.
+console_error_panic_hook = { version = "0.1.7", optional = true }
+web-sys = { version = "0.3.58", optional = true }
+js-sys = { version = "0.3.58" }
+
+# crypto dependencies
+rand_chacha = { version = "0.3.1", default-features = false }
+rand = { version = "0.7.3", features = ["wasm-bindgen"], default-features = false}
+rand_xorshift = { version = "0.2", default-features = false }
+
+# Note that we override the versions of these modules below.
+ark-bls12-381 = { version = "0.3.0", features = ["curve"], default-features = false }
+ark-std = { version = "0.3.0", default-features = false }
+ark-ff = { version = "0.3.0", default-features = false }
+ark-ec = { version = "0.3.0", default-features = false }
+ark-serialize = { path = "../ark/algebra/serialize", features = ["derive"], default-features = false }
+
+# minicov = { path = "../minicov/minicov", optional = true }
+
+[patch.crates-io]
+ark-bls12-381 = { path = "../ark/curves/bls12_381" }
+ark-ec = { path = "../ark/algebra/ec" }
+ark-ff = { path = "../ark/algebra/ff" }
+ark-std = { git = "https://github.com/arkworks-rs/std", rev="05b7a19a" }
+# wasm-bindgen = { path = "../wasm-bindgen" }
+
+[dev-dependencies]
+criterion = { version = "0.3", features = ["html_reports"] }
+pprof = { version = "0.10", features = ["flamegraph", "protobuf-codec"] }
+serial_test = { version = "0.8.0" }
+
+[features]
+
+# Enable by default the set of features created to compile in ZPrize optimization for WASM.
+default = ["zprize-opt"]
+
+# Include a panic hook for printing panic messages to the JS console and web_sys support for adding
+# console::log statements.
+debug = ["console_error_panic_hook", "web-sys/console"]
+
+# Enable parallel computation in arkworks code. Cannot be used with WASM.
+parallel = ["ark-ec/parallel", "ark-ff/parallel"]
+
+# Enable usage of (x86) assembly in arkworks implementations.
+asm = ["ark-ff/asm"]
+
+std = [
+  "ark-ff/std",
+  "ark-ec/std",
+  "ark-bls12-381/std",
+  "ark-serialize/std",
+  "ark-std/std",
+  "bytes/std"
+]
+
+# Set when building the CLI scripts included in the src/bin directory.
+cli = ["clap", "std"]
+
+# Enable use of the prefetch feature in batch_add within ec.
+# Note that this feature is only available on x86.
+prefetch = ["ark-ec/prefetch"]
+
+# Optimization features implemented in the finite-field implementation.
+square-no-carry = ["ark-ff/square-no-carry"]
+no-u128 = ["ark-ff/no-u128"]
+partial-reduce = ["ark-ff/partial-reduce"]
+
+simplified-is-zero = ["ark-ec/simplified-is-zero"]
+
+# Combined feature definition for the best known configuration.
+zprize-opt = ["no-u128", "partial-reduce", "simplified-is-zero", "square-no-carry"]
+
+# Enable coverage profiling using minicov, which is a coverage utility not dependent on std or libc.
+# coverage = ["minicov"]
+
+[profile.dev]
+debug-assertions = true
+incremental = true
+opt-level = 1 # Basic optimization
+strip = false
+
+[profile.test]
+debug-assertions = true
+overflow-checks = true
+incremental = true
+opt-level = 3 # Full optimization
+strip = false
+
+[profile.bench]
+debug = 2     # Include all debug info
+debug-assertions = false
+incremental = true
+lto = true
+opt-level = 3 # Full optimization
+overflow-checks = false
+strip = false # Leave debug information for profiling
+
+[profile.release]
+debug = 2     # Include all debug info
+debug-assertions = false
+incremental = true
+lto = true
+opt-level = 3 # Full optimization
+overflow-checks = false
+strip = false
+
+[[bench]]
+name = "bench_pippenger_msm"
+harness = false
+
+[[bin]]         
+name = "generate-input-files"    
+required-features = ["cli"]
+
+[[bin]]         
+name = "hash-input-files"
+required-features = ["cli"]
+
+[[bin]]         
+name = "foo"    
+required-features = ["cli"]

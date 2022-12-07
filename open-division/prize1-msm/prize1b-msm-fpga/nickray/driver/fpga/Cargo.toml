@@ -1,0 +1,31 @@
+[package]
+name = "fpga"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.61"
+
+[lib]
+name = "fpga"
+
+[dependencies]
+fpga-sys = { path = "sys", optional = true }
+thiserror = "1"
+rand_core = { version = "0.6", features = ["getrandom"] }
+rand = "0.8"
+chacha20 = { version = "0.8", features = ["rng"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+crossbeam = "0.8"
+seq-macro = "0.3"
+hex = "0.4"
+
+[features]
+default = ["f1", "read-2"]
+trace = []
+trace-queue = []
+trace-cmd = []
+log-cmd = []
+single-cmd = []
+read-1 = []
+read-2 = []
+f1 = ["fpga-sys"]

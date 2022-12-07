@@ -1,0 +1,25 @@
+{
+  "name": "submission",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/msm.js",
+  "type": "module",
+  "scripts": {
+    "build": "node ./src/finite-field-compile.js",
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "exports": {
+    ".": "./src/msm.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "fast-base64": "^0.1.8"
+  },
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "wabt": "^1.0.29"
+  }
+}

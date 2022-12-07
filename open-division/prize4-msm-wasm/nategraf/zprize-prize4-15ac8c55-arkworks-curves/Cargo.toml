@@ -1,0 +1,68 @@
+[workspace]
+
+members = [
+    "curve-benches",
+    "curve-constraint-tests",
+
+    "bls12_377",
+    "ed_on_bls12_377",
+
+    "bw6_761",
+    "ed_on_bw6_761",
+
+    "cp6_782",
+    "ed_on_cp6_782",
+
+    "bls12_381",
+    "ed_on_bls12_381",
+    "ed_on_bls12_381_bandersnatch",
+
+    "bn254",
+    "ed_on_bn254",
+
+    "mnt4_298",
+    "mnt6_298",
+    "ed_on_mnt4_298",
+
+    "mnt4_753",
+    "mnt6_753",
+    "ed_on_mnt4_753",
+
+    "pallas",
+    "vesta",
+]
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+incremental = true
+panic = 'abort'
+
+[profile.bench]
+opt-level = 3
+debug = false
+rpath = false
+lto = "thin"
+incremental = true
+debug-assertions = false
+
+[profile.dev]
+opt-level = 0
+panic = 'abort'
+
+[profile.test]
+opt-level = 3
+lto = "thin"
+incremental = true
+debug-assertions = true
+debug = true
+
+# To be removed in the new release.
+# Patch these crates with local development versions
+[patch.crates-io]
+ark-algebra-test-templates = { path = "../algebra/test-templates" }
+ark-ec = { path = "../algebra/ec" }
+ark-ff = { path = "../algebra/ff" }
+ark-r1cs-std = { git = "https://github.com/arkworks-rs/r1cs-std", rev="db6a3d6" }
+ark-serialize = { path = "../algebra/serialize" }
+ark-std = { git = "https://github.com/arkworks-rs/std", rev="05b7a19" }

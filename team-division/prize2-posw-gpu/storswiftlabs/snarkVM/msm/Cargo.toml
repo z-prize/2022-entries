@@ -1,0 +1,46 @@
+[package]
+name = "msm"
+version = "1.0.4"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+snarkvm-algorithms = { path = "../algorithms"}
+snarkvm-dpc = { path = "../dpc"}
+
+#snarkvm-algorithms = {version = "0.7.5", git = "https://github.com/AleoHQ/snarkVM.git", branch = "zprize"}
+#snarkvm-dpc =  {version = "0.7.5", git = "https://github.com/AleoHQ/snarkVM.git", branch = "zprize"}
+
+rand = "0.8"
+rand_chacha = "0.3"
+tokio = {version = "1.16.1", features = ["rt-multi-thread", "macros", "sync", "time"]}
+rayon = "1.5.1"
+anyhow = "1.0.53"
+futures = "0.3.21"
+tracing = "0.1.30"
+tracing-subscriber = {version = "0.3.8", features = [ "env-filter", "parking_lot" ]}
+structopt = "0.3.26"
+aleo-std = "0.1.14"
+
+[dependencies.snarkvm-fields]
+path = "../fields"
+version = "0.7.5"
+optional = true
+#git = "https://github.com/AleoHQ/snarkVM.git"
+#branch = "zprize"
+
+[dependencies.chrono]
+version = "0.4.21"
+default-features = false
+features = [ "clock", "serde" ]
+
+[[bin]]
+name = "hashrate"
+path = "bin/hashrate.rs"
+
+[features]
+default = []
+fields_unadx = ["snarkvm-fields/unadx"]
+cuda = ["snarkvm-algorithms/cuda"]
+profiler = [ "aleo-std/profiler" ]

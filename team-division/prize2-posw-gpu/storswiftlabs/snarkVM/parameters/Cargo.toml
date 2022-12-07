@@ -1,0 +1,108 @@
+[package]
+name = "snarkvm-parameters"
+version = "0.7.5"
+authors = [ "The Aleo Team <hello@aleo.org>" ]
+description = "Parameters for a decentralized virtual machine"
+homepage = "https://aleo.org"
+repository = "https://github.com/AleoHQ/snarkVM"
+keywords = [
+  "aleo",
+  "cryptography",
+  "blockchain",
+  "decentralized",
+  "zero-knowledge"
+]
+categories = [ "compilers", "cryptography", "mathematics", "wasm", "web-programming" ]
+include = [ "Cargo.toml", "src", "README.md", "LICENSE.md" ]
+license = "GPL-3.0"
+edition = "2021"
+
+[dependencies.snarkvm-curves]
+path = "../curves"
+default-features = false
+
+[dependencies.snarkvm-utilities]
+path = "../utilities"
+version = "0.7.5"
+
+[dependencies.aleo-std]
+version = "0.1.14"
+default-features = false
+features = [ "storage" ]
+
+[dependencies.anyhow]
+version = "1"
+
+[dependencies.bincode]
+version = "1"
+
+[dependencies.cfg-if]
+version = "1.0"
+
+[target.'cfg(not(target_family = "wasm"))'.dependencies.curl]
+version = "0.4.43"
+optional = true
+
+[dependencies.hex]
+version = "0.4.3"
+
+[dependencies.itertools]
+version = "0.10.3"
+
+[dependencies.lazy_static]
+version = "1.4"
+
+[dependencies.paste]
+version = "1"
+
+[dependencies.serde_json]
+version = "1"
+
+[dependencies.sha2]
+version = "0.10"
+default-features = false
+
+[dependencies.thiserror]
+version = "1.0"
+
+[dependencies.rand]
+version = "0.8"
+
+[dependencies.reqwest]
+version = "0.11"
+optional = true
+
+[dependencies.wasm-bindgen-futures]
+version = "0.4"
+optional = true
+
+[dependencies.parking_lot]
+version = "0.11"
+features = [ "wasm-bindgen" ]
+optional = true
+
+[dev-dependencies.snarkvm-algorithms]
+path = "../algorithms"
+version = "0.7.5"
+default-features = false
+
+[dev-dependencies.snarkvm-console]
+path = "../console"
+
+[dev-dependencies.snarkvm-dpc]
+path = "../dpc"
+
+[dev-dependencies.curl]
+version = "0.4.34"
+
+[dev-dependencies.hex]
+version = "0.4.3"
+
+[dev-dependencies.rand]
+version = "0.8"
+
+[features]
+default = [ "remote", "snarkvm-algorithms/default" ]
+no_std_out = []
+remote = [ "curl" ]
+wasm = [ "snarkvm-algorithms/wasm", "reqwest", "wasm-bindgen-futures", "parking_lot" ]

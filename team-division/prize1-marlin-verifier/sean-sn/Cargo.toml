@@ -1,0 +1,36 @@
+[package]
+name = "zprize-harness"
+authors = ["The Aleo Team <hello@aleo.org>"]
+version = "0.1.0"
+edition = "2021"
+
+[dependencies.snarkvm]
+path = "../snarkVM"
+
+[dependencies.snarkvm-algorithms]
+path = "../snarkVM/algorithms"
+
+[dependencies.snarkvm-curves]
+path = "../snarkVM/curves"
+
+[dependencies.snarkvm-fields]
+path = "../snarkVM/fields"
+
+[dependencies.snarkvm-r1cs]
+path = "../snarkVM/r1cs"
+
+[dependencies.snarkvm-utilities]
+path = "../snarkVM/utilities"
+
+[dependencies.rand]
+version = "0.8"
+
+[dependencies.old-rand]
+package = "rand"
+version = "0.7"
+
+[dependencies.rstat]
+version = "0.6"
+
+[dependencies.rand_core]
+version = "0.6"

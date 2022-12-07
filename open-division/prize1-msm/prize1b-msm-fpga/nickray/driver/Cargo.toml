@@ -1,0 +1,28 @@
+[package]
+name = "zprize-fpga-msm"
+version = "0.1.0"
+authors = [
+    "Kaveh Aasaraai <kaasaraai@jumptrading.com>",
+    "Emanuele Cesena <ecesena@jumptrading.com>",
+    "Rahul Maganti <rmaganti@jumpcrypto.com>",
+    "Nicolas Stalder <nicolas@jumpcrypto.com>"
+]
+description = "Driver for ZPrize FPGA MSM submission"
+homepage = "https://jumpcrypto.com"
+repository = "https://github.com/nickray/zprize-msm"
+documentation = "https://github.com/nickray/zprize-msm"
+keywords = ["cryptography", "elliptic-curves", "fpga", "msm"]
+categories = ["cryptography"]
+include = ["Cargo.toml", "src", "README.md", "LICENSE-APACHE", "LICENSE-MIT"]
+license = "Apache-2.0 OR MIT"
+edition = "2021"
+publish = false
+
+[dependencies]
+ark-ec = { version = "0.3", default-features = false }
+ark-ff = { version = "0.3", default-features = false }
+ark-std = { version = "0.3", default-features = false }
+
+fpga = { path = "./fpga" }
+msm-fpga = { path = "./msm", features = ["hw"] }
+our-bls12-377 = { package = "ark-bls12-377",  path = "./bls12-377" }

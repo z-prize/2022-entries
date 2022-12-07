@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<script type="module">
+  function buf2hex(buffer) { // buffer is an ArrayBuffer
+    return [...new Uint8Array(buffer)]
+        .map(x => x.toString(16).padStart(2, '0'))
+        .join('');
+  }
+
+  function buf2str(memoryBuffer, logOffset) {
+    var buffer=new Uint8Array(memoryBuffer);
+    let s='';
+
+    for(let i=logOffset;i<logOffset+4096;i++) {
+      if(buffer[i]==0) 
+        return s;
+      else
+        s+=String.fromCharCode(buffer[i]);
+    }
+    return s;
+  }
+
+  async function init() {
+    const { instance } = await WebAssembly.instantiateStreaming(
+      fetch("./WMSM.wasm"),
+    );
+
+    var   startTime, stopTime;
+
+    // timing run
+    startTime = performance.now()
+    instance.exports.oneMillionModMuls();
+    stopTime = performance.now()
+    console.log(`modmuls run time ${stopTime - startTime} ms`)
+
+    // timing run
+    startTime = performance.now()
+    instance.exports.oneMillionModMuls();
+    stopTime = performance.now()
+    console.log(`modmuls run time ${stopTime - startTime} ms`)
+
+    // timing run
+    startTime = performance.now()
+    instance.exports.oneMillionModMuls();
+    stopTime = performance.now()
+    console.log(`modmuls run time ${stopTime - startTime} ms`)
+
+    // timing run
+    startTime = performance.now()
+    instance.exports.oneMillionModSqrs();
+    stopTime = performance.now()
+    console.log(`modsqrs run time ${stopTime - startTime} ms`)
+
+    // timing run
+    startTime = performance.now()
+    instance.exports.oneMillionModSqrs();
+    stopTime = performance.now()
+    console.log(`modsqrs run time ${stopTime - startTime} ms`)
+
+    // timing run
+    startTime = performance.now()
+    instance.exports.oneMillionModSqrs();
+    stopTime = performance.now()
+    console.log(`modsqrs run time ${stopTime - startTime} ms`)
+  }
+
+  init();
+</script>

@@ -1,0 +1,31 @@
+[package]
+name = "reference"
+version = "0.1.0"
+edition = "2021"
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[[bench]]
+harness = false
+name = "pippenger_msm"
+
+[dependencies]
+ark-bls12-381 = { version = "0.3.0" }
+ark-ec = { version = "0.3.0" }
+ark-ff = { version = "0.3.0" }
+ark-std = { version = "0.3.0" }
+instant = { version = "0.1", features = ["wasm-bindgen"] }
+js-sys = { version = "0.3.58" }
+wasm-bindgen = { version = "^0.2" }
+wasm-bindgen-test = { version = "^0.3" }
+web-sys = { version = "^0.3", features = ["console"] }
+
+[dev-dependencies]
+criterion = "0.3"
+
+[profile.test]
+opt-level = 3

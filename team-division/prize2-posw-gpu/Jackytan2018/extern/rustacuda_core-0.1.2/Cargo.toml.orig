@@ -1,0 +1,15 @@
+[package]
+name = "rustacuda_core"
+version = "0.1.2"
+authors = ["Brook Heisler <brookheisler@gmail.com>"]
+edition = "2018"
+
+description = "Minimal kernel-support crate for Rustacuda"
+repository = "https://github.com/bheisler/RustaCUDA"
+readme = "README.md"
+license = "Apache-2.0 OR MIT"
+
+[dependencies]
+
+[dev-dependencies]
+rustacuda = { path = "..", version = "0.1.1" }

@@ -1,0 +1,43 @@
+[package]
+name = "prize-posw-gpu"
+authors = ["The Aleo Team <hello@aleo.org>"]
+version = "0.1.0"
+edition = "2021"
+default-run = "prize-posw-gpu"
+
+[[bin]]
+name = "generator"
+
+[dependencies.snarkvm]
+path = "../TrapdoorTech-zprize-snarkVM"
+
+[dependencies.snarkvm-fields]
+path = "../TrapdoorTech-zprize-snarkVM/fields"
+
+[dependencies.snarkvm-algorithms]
+path = "../TrapdoorTech-zprize-snarkVM/algorithms"
+
+[dependencies.snarkvm-dpc]
+path = "../TrapdoorTech-zprize-snarkVM/dpc"
+
+[dependencies.snarkvm-utilities]
+path = "../TrapdoorTech-zprize-snarkVM/utilities"
+
+[dependencies.snarkvm-curves]
+path = "../TrapdoorTech-zprize-snarkVM/curves"
+
+[dependencies.ec-gpu-common]
+path = "../TrapdoorTech-zprize-ec-gpu-common"
+
+[dependencies.rand]
+version = "0.8"
+
+[dependencies.rand_core]
+version = "0.6"
+
+[dependencies.env_logger]
+version = "0.8"
+
+[dependencies.clap]
+version = "3.1"
+features = ["derive"]

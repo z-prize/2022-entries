@@ -1,0 +1,9 @@
+condense_wildcard_suffixes = true
+edition = "2021"
+imports_granularity = "Crate"
+match_block_trailing_comma = true
+normalize_comments = true
+reorder_imports = true
+use_field_init_shorthand = true
+use_try_shorthand = true
+wrap_comments = true

@@ -1,0 +1,23 @@
+[package]
+name = "prize-posw-gpu"
+authors = ["The Aleo Team <hello@aleo.org>"]
+version = "0.1.0"
+edition = "2021"
+
+[dependencies.snarkvm]
+path = "../snarkVM"
+
+[dependencies.snarkvm-algorithms]
+path = "../snarkVM/algorithms"
+
+[dependencies.snarkvm-dpc]
+path = "../snarkVM/dpc"
+
+[dependencies.snarkvm-utilities]
+path = "../snarkVM/utilities"
+
+[dependencies.rand]
+version = "0.8"
+
+[dependencies.rand_core]
+version = "0.6"

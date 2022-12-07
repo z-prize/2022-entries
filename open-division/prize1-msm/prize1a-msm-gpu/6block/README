@@ -1,0 +1,26 @@
+Please run cargo test --release -- --nocapture to run our msm implementation.
+We prefer to test our implementation on GPU 3090.
+
+Algorithm abstract:
+Our msm algorithm is based on pippenger msm algorithm. We devide 253 bit scalar into several bit windows and calculate msm over one bit window in each round.
+Assume n is the size of msm. Steps in each round:
+1. Extract bits of bit window of scalars into bucket_index array(size:n)
+2. Build point_index array(size:n)
+   point_index[i] = i;
+   each elemement is the original index of each base point in the bases array.
+3. Sort the pair (bucket_index, point_index) in ascending order by key bucket_index.
+   After this step, the point with same scalar are reordered together.
+4. Each cuda thread is assigned a range of points and calculate msm of these points.
+5. Copy result of each cuda thread back to host memory and calculate the final result.
+
+After all the windows' msm is calculated. Calculate the final sum.
+    
+ 
+
+
+
+
+
+
+
+

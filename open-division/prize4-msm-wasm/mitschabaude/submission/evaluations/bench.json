@@ -1,0 +1,1218 @@
+[
+ {
+  "n": 14,
+  "ref": 2.466,
+  "ours": 4.39,
+  "commit": "d351954",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.431,
+  "ours": 4.445,
+  "commit": "977b896",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.49,
+  "ours": 4.77,
+  "commit": "e7ff203",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.44,
+  "ours": 4.108,
+  "commit": "18deabd",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.497,
+  "ours": 3.977,
+  "commit": "2efc155",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.829,
+  "ours": 3.827,
+  "commit": "4da01b5",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.424,
+  "ours": 3.892,
+  "commit": "2289af7",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.42,
+  "ours": 3.344,
+  "commit": "ddb15ef",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.498,
+  "ours": 3.336,
+  "commit": "9095be4",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.79,
+  "ours": 2.714,
+  "commit": "ee02a6d",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.486,
+  "ours": 2.66,
+  "commit": "866b7f4",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.459,
+  "ours": 2.551,
+  "commit": "2bf0a4c",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.579,
+  "ours": 2.622,
+  "commit": "65bbdb6",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.541,
+  "ours": 2.561,
+  "commit": "e72b287",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.586,
+  "ours": 2.505,
+  "commit": "ac1e0ae",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.503,
+  "ours": 2.557,
+  "commit": "d4111ff",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.493,
+  "ours": 2.374,
+  "commit": "43d54b3",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.521,
+  "ours": 2.359,
+  "commit": "5a6b352",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.473,
+  "ours": 2.271,
+  "commit": "d9adad7",
+  "cpu": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.758,
+  "ours": 1.477,
+  "commit": "754afc3",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.705,
+  "ours": 1.402,
+  "commit": "728ba4b",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.694,
+  "ours": 2.175,
+  "commit": "afef355",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.711,
+  "ours": 2.257,
+  "commit": "95b7ede",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.699,
+  "ours": 2.184,
+  "commit": "92d0866",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.709,
+  "ours": 1.587,
+  "commit": "f25348a",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.685,
+  "ours": 1.392,
+  "commit": "c1e70dd",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.71,
+  "ours": 1.415,
+  "commit": "46790c4",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.689,
+  "ours": 1.403,
+  "commit": "68afdd8",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.693,
+  "ours": 1.397,
+  "commit": "e6551e6",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.726,
+  "ours": 0.899,
+  "commit": "a63de90",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.761,
+  "ours": 0.899,
+  "commit": "4aad796",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.789,
+  "ours": 0.921,
+  "nMul": 6253206,
+  "mPerSec": 9451796,
+  "commit": "b8b90c9",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.692,
+  "ours": 0.858,
+  "nMul": 6253206,
+  "mPerSec": 9560229,
+  "commit": "96bdef0",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.693,
+  "ours": 0.869,
+  "nMul": 6253206,
+  "mPerSec": 9680542,
+  "commit": "9827ce1",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.813,
+  "ours": 0.97,
+  "nMul": 6252856,
+  "mPerSec": 9596929,
+  "commit": "616db5e",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": "14",
+  "ref": 1.691,
+  "ours": 0.845,
+  "nMul": 5008945,
+  "mPerSec": 9551098,
+  "commit": "9329def",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.694,
+  "ours": 0.785,
+  "nMul": 4497355,
+  "mPerSec": 9569378,
+  "commit": "96898bd",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": "18",
+  "ref": 19.506,
+  "ours": 9.521,
+  "nMul": 51990048,
+  "mPerSec": 9532888,
+  "commit": "2c7ef45",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.704,
+  "ours": 0.563,
+  "nMul": 3148770,
+  "mPerSec": 9541985,
+  "commit": "e752d19",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.695,
+  "ours": 0.641,
+  "nMul": 3403306,
+  "mPerSec": 9596929,
+  "commit": "928fd0b",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.684,
+  "ours": 0.644,
+  "nMul": 3402592,
+  "mPerSec": 9478673,
+  "commit": "8a46cf8",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.737,
+  "ours": 0.654,
+  "nMul": 3402674,
+  "mPerSec": 9225092,
+  "commit": "c4521ac",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.697,
+  "ours": 0.621,
+  "nMul": 3401568,
+  "mPerSec": 9661836,
+  "commit": "8315df6",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.677,
+  "ours": 0.628,
+  "nMul": 3401112,
+  "mPerSec": 9624639,
+  "commit": "320a36a",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.712,
+  "ours": 0.625,
+  "nMul": 3402188,
+  "mPerSec": 9469697,
+  "commit": "b9f50a5",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.536,
+  "ours": 6.691,
+  "nMul": 30721991,
+  "mPerSec": 9643202,
+  "commit": "880a3f1",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.793,
+  "ours": 0.56,
+  "nMul": 2682641,
+  "mPerSec": 9541985,
+  "commit": "880a3f1",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.725,
+  "ours": 0.562,
+  "nMul": 2667260,
+  "mPerSec": 9478673,
+  "commit": "fb027a7",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.713,
+  "ours": 0.554,
+  "nMul": 2667096,
+  "mPerSec": 9541985,
+  "commit": "d9d9d7a",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.628,
+  "ours": 6.67,
+  "nMul": 30721696,
+  "mPerSec": 9433962,
+  "commit": "d9d9d7a",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.711,
+  "ours": 0.578,
+  "nMul": 2667648,
+  "mPerSec": 9460738,
+  "commit": "1b1e5e1",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.497,
+  "ours": 6.399,
+  "nMul": 28945634,
+  "mPerSec": 9652510,
+  "commit": "a738164",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.697,
+  "ours": 0.554,
+  "nMul": 2465553,
+  "mPerSec": 9560229,
+  "commit": "a738164",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.549,
+  "ours": 6.432,
+  "nMul": 28945634,
+  "mPerSec": 9624639,
+  "commit": "79cd0e6",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.686,
+  "ours": 0.473,
+  "nMul": 2465553,
+  "mPerSec": 9606148,
+  "commit": "79cd0e6",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.69,
+  "ours": 0.443,
+  "nMul": 2465553,
+  "mPerSec": 10162602,
+  "commit": "90bcfc7",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.911,
+  "ours": 6.321,
+  "nMul": 28945634,
+  "mPerSec": 10298661,
+  "commit": "90bcfc7",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.675,
+  "ours": 0.436,
+  "nMul": 2465553,
+  "mPerSec": 9970090,
+  "commit": "985f1e8",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.409,
+  "ours": 5.925,
+  "nMul": 28945634,
+  "mPerSec": 10515247,
+  "commit": "985f1e8",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.683,
+  "ours": 0.428,
+  "nMul": 2465553,
+  "mPerSec": 11655012,
+  "commit": "f491bbf",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.378,
+  "ours": 5.693,
+  "nMul": 28945634,
+  "mPerSec": 11641444,
+  "commit": "f491bbf",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.718,
+  "ours": 0.409,
+  "nMul": 2465553,
+  "mPerSec": 11363636,
+  "commit": "afa4713",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.42,
+  "ours": 5.595,
+  "nMul": 28945634,
+  "mPerSec": 11655012,
+  "commit": "afa4713",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.711,
+  "ours": 0.414,
+  "nMul": 2465553,
+  "mPerSec": 11723329,
+  "commit": "2daac65",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.717,
+  "ours": 0.453,
+  "nMul": 2465553,
+  "mPerSec": 11389522,
+  "commit": "05206fb",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.614,
+  "ours": 5.505,
+  "nMul": 28945634,
+  "mPerSec": 11614402,
+  "commit": "05206fb",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.699,
+  "ours": 0.413,
+  "nMul": 2465553,
+  "mPerSec": 11641444,
+  "commit": "380a380",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.62,
+  "ours": 5.544,
+  "nMul": 28945634,
+  "mPerSec": 11627907,
+  "commit": "380a380",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.696,
+  "ours": 5.547,
+  "nMul": 28945634,
+  "mPerSec": 11520737,
+  "commit": "7378e6a",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.698,
+  "ours": 0.436,
+  "nMul": 2465553,
+  "mPerSec": 11668611,
+  "commit": "7378e6a",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.709,
+  "ours": 0.432,
+  "nMul": 2465553,
+  "mPerSec": 11614402,
+  "commit": "7d61ce8",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 20.034,
+  "ours": 5.557,
+  "nMul": 28945634,
+  "mPerSec": 11061947,
+  "commit": "7d61ce8",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.69,
+  "ours": 0.385,
+  "nMul": 2465553,
+  "mPerSec": 11682243,
+  "commit": "3929b25",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.606,
+  "ours": 5.471,
+  "nMul": 28945634,
+  "mPerSec": 11641444,
+  "commit": "3929b25",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.381,
+  "ours": 5.607,
+  "nMul": 28945634,
+  "mPerSec": 11641444,
+  "commit": "051ec5c",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.7,
+  "ours": 0.387,
+  "nMul": 2465553,
+  "mPerSec": 11520737,
+  "commit": "051ec5c",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.691,
+  "ours": 0.367,
+  "nMul": 2465553,
+  "mPerSec": 11641444,
+  "commit": "7f7d2d3",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.477,
+  "ours": 5.198,
+  "nMul": 28945634,
+  "mPerSec": 11723329,
+  "commit": "7f7d2d3",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.692,
+  "ours": 0.372,
+  "nMul": 2465553,
+  "mPerSec": 11337868,
+  "commit": "c850a23",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.701,
+  "ours": 0.366,
+  "nMul": 2465553,
+  "mPerSec": 11682243,
+  "commit": "2f27e6f",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.44,
+  "ours": 5.218,
+  "nMul": 28945634,
+  "mPerSec": 11682243,
+  "commit": "2f27e6f",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.762,
+  "ours": 0.382,
+  "nMul": 2465558,
+  "mPerSec": 11587486,
+  "commit": "58185d0",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.899,
+  "ours": 1.396,
+  "nMul": 8496776,
+  "mPerSec": 11481056,
+  "commit": "58185d0",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 20.67,
+  "ours": 5.329,
+  "nMul": 28945639,
+  "mPerSec": 11668611,
+  "commit": "58185d0",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.823,
+  "ours": 1.35,
+  "nMul": 8496776,
+  "mPerSec": 11481056,
+  "commit": "fb40776",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.98,
+  "ours": 5.309,
+  "nMul": 28888121,
+  "mPerSec": 11695906,
+  "commit": "fb40776",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.773,
+  "ours": 0.374,
+  "nMul": 2465558,
+  "mPerSec": 11723329,
+  "commit": "e98dd04",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.702,
+  "ours": 0.368,
+  "nMul": 2261258,
+  "mPerSec": 11709602,
+  "commit": "5964717",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.649,
+  "ours": 5.306,
+  "nMul": 27559785,
+  "mPerSec": 11778563,
+  "commit": "5964717",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.673,
+  "ours": 1.45,
+  "nMul": 8091670,
+  "mPerSec": 11764706,
+  "commit": "5964717",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.725,
+  "ours": 0.373,
+  "nMul": 2261258,
+  "mPerSec": 11682243,
+  "commit": "6666c2c",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.744,
+  "ours": 0.357,
+  "nMul": 2261465,
+  "mPerSec": 11820331,
+  "commit": "e53ac4a",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.858,
+  "ours": 1.343,
+  "nMul": 8092741,
+  "mPerSec": 11834320,
+  "commit": "e53ac4a",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 20.046,
+  "ours": 4.799,
+  "nMul": 28368635,
+  "mPerSec": 11876485,
+  "commit": "e53ac4a",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.763,
+  "ours": 0.368,
+  "nMul": 2261258,
+  "mPerSec": 11655012,
+  "commit": "73a9fb7",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.915,
+  "ours": 1.37,
+  "nMul": 8091670,
+  "mPerSec": 11848341,
+  "commit": "73a9fb7",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 20.221,
+  "ours": 5.127,
+  "nMul": 28366015,
+  "mPerSec": 11834320,
+  "commit": "73a9fb7",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.929802324000746,
+  "ours": 1.4366555519998074,
+  "nMul": 8091670,
+  "mPerSec": 11291109,
+  "commit": "27b10ba",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.943275750999339,
+  "ours": 0.37505246299970896,
+  "nMul": 2261258,
+  "mPerSec": 11617952,
+  "commit": "27b10ba",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 20.593418055000715,
+  "ours": 5.308701814000495,
+  "nMul": 28348865,
+  "mPerSec": 11670356,
+  "commit": "27b10ba",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.732019441999495,
+  "ours": 0.37319939699955285,
+  "nMul": 2273942,
+  "mPerSec": 11456862,
+  "commit": "e64a81f",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.770519811000675,
+  "ours": 1.3961047360002994,
+  "nMul": 8117061,
+  "mPerSec": 11569912,
+  "commit": "e64a81f",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.94087848899886,
+  "ours": 5.282654079999775,
+  "nMul": 28395197,
+  "mPerSec": 11296241,
+  "commit": "e64a81f",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.359495892003178,
+  "ours": 5.036199997000396,
+  "nMul": 28395197,
+  "mPerSec": 11772300,
+  "commit": "1d0e7a9",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.6843143180012703,
+  "ours": 0.3404502609968185,
+  "nMul": 2273942,
+  "mPerSec": 11257168,
+  "commit": "1d0e7a9",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.665485606998205,
+  "ours": 1.3375810960009693,
+  "nMul": 8117061,
+  "mPerSec": 11186618,
+  "commit": "1d0e7a9",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.6880243959985672,
+  "ours": 0.3476615110002458,
+  "nMul": 2273942,
+  "mPerSec": 11750191,
+  "commit": "668b706",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.671807388998568,
+  "ours": 1.3622683929987252,
+  "nMul": 8117061,
+  "mPerSec": 11735653,
+  "commit": "668b706",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.482374083001165,
+  "ours": 5.114268392998725,
+  "nMul": 28395197,
+  "mPerSec": 11791800,
+  "commit": "668b706",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.697318663999439,
+  "ours": 1.3631522479988634,
+  "nMul": 8117061,
+  "mPerSec": 11706707,
+  "commit": "23bfb03",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.6846721239984035,
+  "ours": 0.3286254950016737,
+  "nMul": 2273942,
+  "mPerSec": 11757166,
+  "commit": "d41db25",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.401456869997084,
+  "ours": 5.039134191006422,
+  "nMul": 28395197,
+  "mPerSec": 11724777,
+  "commit": "d41db25",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 6.035123487003148,
+  "ours": 1.325513898000121,
+  "nMul": 8117061,
+  "mPerSec": 11838117,
+  "commit": "d41db25",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.6894801860004665,
+  "ours": 0.3417955000028014,
+  "nMul": 2273942,
+  "mPerSec": 11627533,
+  "commit": "da9b12f",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 6.17742086699605,
+  "ours": 1.3160268500000238,
+  "nMul": 8117061,
+  "mPerSec": 11668459,
+  "commit": "da9b12f",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.359888371005653,
+  "ours": 5.098612967006862,
+  "nMul": 28395197,
+  "mPerSec": 11748820,
+  "commit": "da9b12f",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.6881231100037695,
+  "ours": 0.33789445099979637,
+  "nMul": 2273942,
+  "mPerSec": 11769236,
+  "commit": "21e9ad3",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.664250459998846,
+  "ours": 1.337883910998702,
+  "nMul": 8117061,
+  "mPerSec": 11640001,
+  "commit": "21e9ad3",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.395613443002105,
+  "ours": 5.105774011000991,
+  "nMul": 28395197,
+  "mPerSec": 11769160,
+  "commit": "21e9ad3",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.64537982599996,
+  "ours": 1.324260206999723,
+  "nMul": 8117061,
+  "mPerSec": 11756936,
+  "commit": "c2f8001",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.393482114999554,
+  "ours": 5.0839341749995945,
+  "nMul": 28395197,
+  "mPerSec": 11784825,
+  "commit": "c2f8001",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.6936973529998214,
+  "ours": 0.34784687799960373,
+  "nMul": 2273942,
+  "mPerSec": 11766803,
+  "commit": "c2f8001",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 2.8529402370154857,
+  "ours": 0.46343623897433284,
+  "nMul": 2273942,
+  "mPerSec": 8963481,
+  "commit": "afc44e6",
+  "cpu": "AMD EPYC 7443P 24-Core Processor"
+ },
+ {
+  "n": 16,
+  "ref": 9.577329726994037,
+  "ours": 1.704644796013832,
+  "nMul": 8117061,
+  "mPerSec": 8969044,
+  "commit": "afc44e6",
+  "cpu": "AMD EPYC 7443P 24-Core Processor"
+ },
+ {
+  "n": 18,
+  "ref": 32.786731195002794,
+  "ours": 6.039665455013513,
+  "nMul": 28395197,
+  "mPerSec": 8935932,
+  "commit": "afc44e6",
+  "cpu": "AMD EPYC 7443P 24-Core Processor"
+ },
+ {
+  "n": 18,
+  "ref": 19.219480771996082,
+  "ours": 5.096301255002618,
+  "nMul": 28395197,
+  "mPerSec": 11649693,
+  "commit": "a929354",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.7486537090018395,
+  "ours": 1.3787765770033003,
+  "nMul": 8117061,
+  "mPerSec": 11659549,
+  "commit": "a929354",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 20.63510253399983,
+  "ours": 5.027136012000032,
+  "nMul": 28395197,
+  "mPerSec": 11533250,
+  "commit": "dc64060",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 6.183443692999892,
+  "ours": 1.3812569260001182,
+  "nMul": 8117061,
+  "mPerSec": 11602606,
+  "commit": "dc64060",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.6780396250002085,
+  "ours": 0.3859589090002701,
+  "nMul": 2273942,
+  "mPerSec": 11436736,
+  "commit": "dc64060",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.6993651940003038,
+  "ours": 0.37568173700012264,
+  "nMul": 2273942,
+  "mPerSec": 11674193,
+  "commit": "e27ef34",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.711150620999746,
+  "ours": 1.3574291629996151,
+  "nMul": 8117061,
+  "mPerSec": 11635927,
+  "commit": "e27ef34",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.45434334900044,
+  "ours": 5.066981634000316,
+  "nMul": 28395197,
+  "mPerSec": 11648194,
+  "commit": "e27ef34",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.7637630560025572,
+  "ours": 0.3835648910030723,
+  "nMul": 2253704,
+  "mPerSec": 11813293,
+  "commit": "e7dc30d",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.847179205998779,
+  "ours": 1.2863845210000873,
+  "nMul": 8293730,
+  "mPerSec": 11787297,
+  "commit": "e7dc30d",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 20.330271824993194,
+  "ours": 4.570037263996899,
+  "nMul": 28366015,
+  "mPerSec": 11718873,
+  "commit": "e7dc30d",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.7635804800018668,
+  "ours": 0.37240343199670317,
+  "nMul": 2253704,
+  "mPerSec": 11751804,
+  "commit": "04dad79",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.841779235996306,
+  "ours": 1.2593616020008922,
+  "nMul": 8293730,
+  "mPerSec": 11836671,
+  "commit": "04dad79",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.979867329999806,
+  "ours": 4.435922605998814,
+  "nMul": 28366015,
+  "mPerSec": 11782271,
+  "commit": "04dad79",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 14,
+  "ref": 1.6960165869966148,
+  "ours": 0.34793661199510095,
+  "nMul": 2253704,
+  "mPerSec": 11715850,
+  "commit": "1c7e2ae",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 16,
+  "ref": 5.677319531999529,
+  "ours": 1.2022881290018559,
+  "nMul": 8293730,
+  "mPerSec": 11695977,
+  "commit": "1c7e2ae",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ },
+ {
+  "n": 18,
+  "ref": 19.346169762000443,
+  "ours": 4.201796732999385,
+  "nMul": 28366015,
+  "mPerSec": 11532600,
+  "commit": "1c7e2ae",
+  "cpu": "Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz"
+ }
+]

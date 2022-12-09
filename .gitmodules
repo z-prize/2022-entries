@@ -1,0 +1,12 @@
+[submodule "open-division/prize7-msm-mobile/gnark"]
+	path = open-division/prize7-msm-mobile/gnark
+	url = https://github.com/gbotrel/zprize-mobile-harness.git
+[submodule "open-division/prize7-msm-mobile/yyteam"]
+	path = open-division/prize7-msm-mobile/yyteam
+	url = https://github.com/HaveYouTall/Mobile-MSM-open.git
+[submodule "open-division/prize7-msm-mobile/nistath"]
+	path = open-division/prize7-msm-mobile/nistath
+	url = https://github.com/nistath/zprize-mobile-msm
+[submodule "open-division/prize7-msm-mobile/trapdoor-tech"]
+	path = open-division/prize7-msm-mobile/trapdoor-tech
+	url = https://github.com/Trapdoor-Tech/TrapdoorTech-zprize-mobile-harness

@@ -1,0 +1,37 @@
+{
+  "version": "2022.1",
+  "applications": [],
+  "platforms": [],
+  "systems": [
+    {
+      "name": "ntt_system",
+      "platform": "/opt/xilinx/platforms/xilinx_u55n_gen3x4_xdma_2_202110_1/xilinx_u55n_gen3x4_xdma_2_202110_1.xpfm",
+      "sysConfig": "config0_0",
+      "buildConfig": "Emulation-HW",
+      "applications": [
+        {
+          "name": "ntt_system_hw_link",
+          "platform": "/opt/xilinx/platforms/xilinx_u55n_gen3x4_xdma_2_202110_1/xilinx_u55n_gen3x4_xdma_2_202110_1.xpfm",
+          "sysConfig": "Linux on x86",
+          "domain": "pl",
+          "system": "ntt_system"
+        },
+        {
+          "name": "ntt_kernels",
+          "platform": "/opt/xilinx/platforms/xilinx_u55n_gen3x4_xdma_2_202110_1/xilinx_u55n_gen3x4_xdma_2_202110_1.xpfm",
+          "sysConfig": "Linux on x86",
+          "domain": "",
+          "system": "ntt_system"
+        },
+        {
+          "name": "ntt",
+          "platform": "/opt/xilinx/platforms/xilinx_u55n_gen3x4_xdma_2_202110_1/xilinx_u55n_gen3x4_xdma_2_202110_1.xpfm",
+          "sysConfig": "config0_0",
+          "domain": "x86",
+          "system": "ntt_system"
+        }
+      ]
+    }
+  ],
+  "others": []
+}

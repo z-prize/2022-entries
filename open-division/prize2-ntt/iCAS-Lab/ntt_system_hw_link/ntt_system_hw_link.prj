@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ASCII"?>
+<hwlink:HwLinkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hwlink="http://www.xilinx.com/acceleration/hwlink" name="ntt_system_hw_link" platform="/opt/xilinx/platforms/xilinx_u55n_gen3x4_xdma_2_202110_1/xilinx_u55n_gen3x4_xdma_2_202110_1.xpfm" systemProject="ntt_system" cpu="pl">
+  <configuration name="Emulation-SW" id="com.xilinx.ide.accel.config.hwlink.sw_emu.1757118404">
+    <configBuildOptions xsi:type="hwlink:LinkOptions">
+      <binaryContainers name="binary_container_1" xoccOptions="-g --kernel_frequency 0:100">
+        <kernels name="NTT_2_3_in_place" projectName="ntt_kernels">
+          <computeUnits name="NTT_2_3_in_place_1" slr="">
+            <args name="in" master="true" memory=""/>
+            <args name="powers" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </configBuildOptions>
+  </configuration>
+  <configuration name="Emulation-HW" id="com.xilinx.ide.accel.config.hwlink.hw_emu.512914583">
+    <configBuildOptions xsi:type="hwlink:LinkOptions" target="hw_emu">
+      <binaryContainers name="binary_container_1" xoccOptions="-g --kernel_frequency 0:100">
+        <kernels name="NTT_2_3_in_place" projectName="ntt_kernels">
+          <computeUnits name="NTT_2_3_in_place_1" slr="">
+            <args name="in" master="true" memory=""/>
+            <args name="powers" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </configBuildOptions>
+    <lastBuildOptions xsi:type="hwlink:LinkOptions" target="hw_emu">
+      <binaryContainers name="binary_container_1" xoccOptions="-g --kernel_frequency 0:100">
+        <kernels name="NTT_2_3_in_place" projectName="ntt_kernels">
+          <computeUnits name="NTT_2_3_in_place_1" slr="">
+            <args name="in" master="true" memory=""/>
+            <args name="powers" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </lastBuildOptions>
+  </configuration>
+  <configuration name="Hardware" id="com.xilinx.ide.accel.config.hwlink.hw.1482753501">
+    <configBuildOptions xsi:type="hwlink:LinkOptions" target="hw">
+      <binaryContainers name="binary_container_1" xoccOptions="-g --kernel_frequency 0:100">
+        <kernels name="NTT_2_3_in_place" projectName="ntt_kernels">
+          <computeUnits name="NTT_2_3_in_place_1" slr="">
+            <args name="in" master="true" memory=""/>
+            <args name="powers" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </configBuildOptions>
+    <lastBuildOptions xsi:type="hwlink:LinkOptions" target="hw">
+      <binaryContainers name="binary_container_1" xoccOptions="-g --kernel_frequency 0:100">
+        <kernels name="NTT_2_3_in_place" projectName="ntt_kernels">
+          <computeUnits name="NTT_2_3_in_place_1" slr="">
+            <args name="in" master="true" memory=""/>
+            <args name="powers" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </lastBuildOptions>
+  </configuration>
+</hwlink:HwLinkProject>

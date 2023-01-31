@@ -1,0 +1,8 @@
+_x/
+hw_emu/
+sw_emu/
+hw/
+.ipcache/
+v++_*.log
+xcd.log
+xrc.log

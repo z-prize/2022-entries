@@ -1,0 +1,5 @@
+packaged_kernel*
+tmp_kernel_pack*
+vivado*.jou
+vivado*.log
+nantucket.xo

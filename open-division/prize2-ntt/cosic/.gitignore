@@ -1,0 +1,19 @@
+build/
+run/
+debug/
+
+.run/
+.ipcache/
+.Xil/
+xsim.dir/
+
+*.log
+*.jou
+*.str
+*.str
+*.pb
+
+testvectors/*.txt
+
+# auto-generated from FCLK in Makefile
+cfg/clock.cfg

@@ -1,5 +1,6 @@
 import * as reference from "reference";
 import * as submission from "./submission.wasm"
+import * as submission_new from "submission_new";
 import * as utility from "./utility";
 
 const REPEAT = 5;
@@ -68,17 +69,18 @@ function arraysEqual(arr1, arr2) {
   return true;
 }
 
-function check_correctness() {
+async function check_correctness() {
   for (let repeat = 0; repeat <= 100; repeat++) {
     for (let size = 6; size <= 6; size += 2) { // Note: This size will be updated during evaluation
       const point_vec = new reference.PointVectorInput(Math.pow(2, size));
       const scalar_vec = new reference.ScalarVectorInput(Math.pow(2, size));
-      const reference_result = reference.compute_msm(point_vec, scalar_vec).toJsArray();
       const js_point_vec = point_vec.toJsArray();
       const js_scalar_vec = scalar_vec.toJsArray();
-      const submission_result = submission_compute_msm(js_point_vec, js_scalar_vec);
+      const reference_result = submission_compute_msm(js_point_vec, js_scalar_vec);
+      const submission_res = await submission_new.compute_msm(js_point_vec, js_scalar_vec);
+      const submission_result = submission_res.toJsArray();
       if (!arraysEqual(submission_result[0], reference_result[0])
-        || !arraysEqual(submission_result[1], reference_result[1])) {
+          || !arraysEqual(submission_result[1], reference_result[1])) {
         return `Correctness check failed.\n\
 submission_result: ${submission_result}\n\
 reference_result: ${reference_result}\n`;
@@ -99,7 +101,7 @@ function benchmark_submission() {
       { length: REPEAT },
       (_, i) => {
         const t0 = performance.now();
-        submission_compute_msm(js_point_vec, js_scalar_vec);
+        submission_new.compute_msm(js_point_vec, js_scalar_vec);
         const t1 = performance.now();
         return t1 - t0;
       }
@@ -130,8 +132,9 @@ function benchmark_reference() {
   return out_text;
 }
 
-const correctness_result = check_correctness();
-const benchmark_submission_result = benchmark_submission();
-const benchmark_reference_result = benchmark_reference();
+console.log("before start");
+const correctness_result = check_correctness().then(s => {console.log(s)}).catch(r => {console.log(r)});
+// const benchmark_submission_result = benchmark_submission();
+// const benchmark_reference_result = benchmark_reference();
 const pre = document.getElementById("wasm-msm");
-pre.textContent = correctness_result + "\n" + benchmark_submission_result + "\n" + benchmark_reference_result;
+pre.textContent = correctness_result + "\n";// + benchmark_submission_result + "\n" + benchmark_reference_result;

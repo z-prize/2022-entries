@@ -28,9 +28,11 @@
   "homepage": "https://github.com/rustwasm/create-wasm-app#readme",
   "dependencies": {
     "big-integer": "^1.6.51",
-    "reference": "file:../reference/pkg"
+    "reference": "file:../reference/pkg",
+    "submission_new": "file:../submission_new/pkg"
   },
   "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
     "copy-webpack-plugin": "^5.0.0",
     "hello-wasm-pack": "^0.1.0",
     "webpack": "^4.29.3",

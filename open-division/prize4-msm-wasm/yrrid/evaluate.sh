@@ -24,8 +24,8 @@ fi
 
 # Compiles submission into a `.wasm` module
 # Feel free to change
-cd submission
-cp submission.wasm ../www
+cd submission_new
+wasm-pack build --release
 cd ..
 
 # Evaluation

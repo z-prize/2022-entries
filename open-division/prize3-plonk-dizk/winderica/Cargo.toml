@@ -1,0 +1,13 @@
+[workspace]
+members = [
+  "plonk",
+  "rescue",
+  "primitives",
+  "utilities",
+  "utilities_derive",
+  "distributed",
+  "distributed_derive",
+]
+
+[profile.test]
+opt-level = 3

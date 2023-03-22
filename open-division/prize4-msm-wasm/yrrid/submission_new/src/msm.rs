@@ -5,7 +5,8 @@ use ark_ec::{AffineCurve, ProjectiveCurve};
 use ark_ff::{BigInteger, PrimeField, UniformRand};
 use ark_serialize::CanonicalSerialize;
 use futures::FutureExt;
-use wasm_bindgen::{JsCast, JsValue};
+use wasm_bindgen::{JsCast, JsError, JsValue};
+use wasm_bindgen::prelude::wasm_bindgen;
 use wasm_bindgen_futures::{ JsFuture};
 use js_sys::{Array, Error, Function, Object, Reflect, Uint8Array, WebAssembly::{
     instantiate_buffer, Instance, Memory
@@ -37,10 +38,17 @@ pub fn generate_msm_inputs<A>(
 
 
 const WASM: &[u8] = include_bytes!("./submission.wasm");
+static mut WASM_INSTANCE: Option<Instance> = None;
+
+#[wasm_bindgen]
+pub async unsafe fn init_fast_msm_wasm() {
+    let a: JsValue = JsFuture::from(instantiate_buffer(WASM, &Object::new())).await.unwrap();
+    WASM_INSTANCE = Some(Reflect::get(&a, &"instance".into()).unwrap().dyn_into().unwrap());
+}
 
 use web_sys::console;
 
-pub(crate) async fn compute_msm<A>(
+pub(crate) unsafe fn compute_msm<A>(
     point_vec: &Vec<<A::Projective as ProjectiveCurve>::Affine>,
     scalar_vec: &Vec<<A::ScalarField as PrimeField>::BigInt>,
 ) -> Result<Vec<u8>, Error>
@@ -48,22 +56,11 @@ pub(crate) async fn compute_msm<A>(
         A:  AffineCurve,
 {
 
-    let rt = tokio::runtime::Builder::new_current_thread()
-        .enable_all()
-        .build()
-        .unwrap();
+    if WASM_INSTANCE.is_none() {
+        panic!("wasm not initialized");
+    }
 
-    let wasm_instance: Instance = {
-        let promise = instantiate_buffer(WASM, &Object::new());
-        let a: JsFuture = JsFuture::from(promise);
-        let msg = format!("inside compute_msm after JsFuture {:?}", a);
-
-        let b = a.await;
-        Reflect::get(&b.expect("REASON"), &"instance".into()).unwrap().dyn_into().unwrap()
-
-    };
-
-    let c = wasm_instance.exports();
+    let c = WASM_INSTANCE.clone().unwrap().exports();
 
     let size = scalar_vec.len();
     let window_bits = if size > 128*1024 {

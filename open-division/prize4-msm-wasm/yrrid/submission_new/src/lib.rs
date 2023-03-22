@@ -100,7 +100,7 @@ impl PointOutput {
 }
 
 #[wasm_bindgen]
-pub async fn compute_msm(
+pub unsafe fn compute_msm(
     point_vec: Array,
     scalar_vec: Array,
 ) -> PointOutput {
@@ -134,7 +134,7 @@ pub async fn compute_msm(
     let result =  msm::compute_msm::<G1Affine>(
         &point,
         &scalar
-    ).await.unwrap();
+    ).unwrap();
 
     let m = format!("size {}", &result.len());
 

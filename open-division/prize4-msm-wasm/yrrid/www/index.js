@@ -69,7 +69,7 @@ function arraysEqual(arr1, arr2) {
   return true;
 }
 
-async function check_correctness() {
+function check_correctness() {
   for (let repeat = 0; repeat <= 100; repeat++) {
     for (let size = 6; size <= 6; size += 2) { // Note: This size will be updated during evaluation
       const point_vec = new reference.PointVectorInput(Math.pow(2, size));
@@ -77,7 +77,7 @@ async function check_correctness() {
       const js_point_vec = point_vec.toJsArray();
       const js_scalar_vec = scalar_vec.toJsArray();
       const reference_result = submission_compute_msm(js_point_vec, js_scalar_vec);
-      const submission_res = await submission_new.compute_msm(js_point_vec, js_scalar_vec);
+      const submission_res = submission_new.compute_msm(js_point_vec, js_scalar_vec);
       const submission_result = submission_res.toJsArray();
       if (!arraysEqual(submission_result[0], reference_result[0])
           || !arraysEqual(submission_result[1], reference_result[1])) {
@@ -92,7 +92,7 @@ reference_result: ${reference_result}\n`;
 
 function benchmark_submission() {
   let out_text = "Submission performance.\n";
-  for (let size = 6; size <= 6; size += 2) { // Note: This size will be updated during evaluation
+  for (let size = 16; size <= 16; size += 2) { // Note: This size will be updated during evaluation
     const point_vec = new reference.PointVectorInput(Math.pow(2, size));
     const scalar_vec = new reference.ScalarVectorInput(Math.pow(2, size));
     const js_point_vec = point_vec.toJsArray();
@@ -114,7 +114,7 @@ function benchmark_submission() {
 
 function benchmark_reference() {
   let out_text = "Reference performance.\n";
-  for (let size = 6; size <= 6; size += 2) { // Note: This size will be updated during evaluation
+  for (let size = 16; size <= 16; size += 2) { // Note: This size will be updated during evaluation
     const point_vec = new reference.PointVectorInput(Math.pow(2, size));
     const scalar_vec = new reference.ScalarVectorInput(Math.pow(2, size));
     const perf = Array.from(
@@ -132,9 +132,11 @@ function benchmark_reference() {
   return out_text;
 }
 
-console.log("before start");
-const correctness_result = check_correctness().then(s => {console.log(s)}).catch(r => {console.log(r)});
-// const benchmark_submission_result = benchmark_submission();
-// const benchmark_reference_result = benchmark_reference();
-const pre = document.getElementById("wasm-msm");
-pre.textContent = correctness_result + "\n";// + benchmark_submission_result + "\n" + benchmark_reference_result;
+submission_new.init_fast_msm_wasm().then(a => {
+  console.log("before start");
+  const correctness_result = check_correctness();
+  const benchmark_submission_result = benchmark_submission();
+  const benchmark_reference_result = benchmark_reference();
+  const pre = document.getElementById("wasm-msm");
+  pre.textContent = correctness_result + "\n" + benchmark_submission_result + "\n" + benchmark_reference_result;
+})

@@ -23,6 +23,8 @@ js-sys = { version = "0.3.58" }
 wasm-bindgen = { version = "^0.2" }
 wasm-bindgen-test = { version = "^0.3" }
 web-sys = { version = "^0.3", features = ["console"] }
+rand_chacha = { version = "0.3.1" }
+getrandom = {version = "0.2.8", features = ["js"]}
 
 [dev-dependencies]
 criterion = "0.3"

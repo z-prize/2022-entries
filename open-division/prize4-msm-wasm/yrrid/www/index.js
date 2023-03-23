@@ -70,12 +70,14 @@ function arraysEqual(arr1, arr2) {
 }
 
 function check_correctness() {
-  for (let repeat = 0; repeat <= 100; repeat++) {
-    for (let size = 6; size <= 6; size += 2) { // Note: This size will be updated during evaluation
+  for (let repeat = 0; repeat <= 1000; repeat++) {
+    for (let size = 12; size <= 12; size += 2) { // Note: This size will be updated during evaluation
       const point_vec = new reference.PointVectorInput(Math.pow(2, size));
       const scalar_vec = new reference.ScalarVectorInput(Math.pow(2, size));
       const js_point_vec = point_vec.toJsArray();
       const js_scalar_vec = scalar_vec.toJsArray();
+      console.log(js_point_vec[0][0]);
+      console.log(js_scalar_vec[0]);
       const reference_result = submission_compute_msm(js_point_vec, js_scalar_vec);
       const submission_res = submission_new.compute_msm(js_point_vec, js_scalar_vec);
       const submission_result = submission_res.toJsArray();
@@ -135,8 +137,8 @@ function benchmark_reference() {
 submission_new.init_fast_msm_wasm().then(a => {
   console.log("before start");
   const correctness_result = check_correctness();
-  const benchmark_submission_result = benchmark_submission();
-  const benchmark_reference_result = benchmark_reference();
+  // const benchmark_submission_result = benchmark_submission();
+  // const benchmark_reference_result = benchmark_reference();
   const pre = document.getElementById("wasm-msm");
-  pre.textContent = correctness_result + "\n" + benchmark_submission_result + "\n" + benchmark_reference_result;
+  pre.textContent = correctness_result ;//+ "\n" + benchmark_submission_result + "\n" + benchmark_reference_result;
 })

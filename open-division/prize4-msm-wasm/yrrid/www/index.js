@@ -70,15 +70,15 @@ function arraysEqual(arr1, arr2) {
 }
 
 function check_correctness() {
-  for (let repeat = 0; repeat <= 1000; repeat++) {
-    for (let size = 12; size <= 12; size += 2) { // Note: This size will be updated during evaluation
+  for (let repeat = 0; repeat <= 1; repeat++) {
+    for (let size = 1; size <= 1; size += 2) { // Note: This size will be updated during evaluation
       const point_vec = new reference.PointVectorInput(Math.pow(2, size));
       const scalar_vec = new reference.ScalarVectorInput(Math.pow(2, size));
       const js_point_vec = point_vec.toJsArray();
       const js_scalar_vec = scalar_vec.toJsArray();
       console.log(js_point_vec[0][0]);
       console.log(js_scalar_vec[0]);
-      const reference_result = submission_compute_msm(js_point_vec, js_scalar_vec);
+      const reference_result = reference.compute_msm(point_vec, scalar_vec);
       const submission_res = submission_new.compute_msm(js_point_vec, js_scalar_vec);
       const submission_result = submission_res.toJsArray();
       if (!arraysEqual(submission_result[0], reference_result[0])

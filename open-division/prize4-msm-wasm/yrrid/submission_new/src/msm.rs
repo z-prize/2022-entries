@@ -1,9 +1,10 @@
 use std::future::Future;
+use std::io::Cursor;
 use std::panic;
-use ark_bls12_381::G1Affine;
-use ark_ec::{AffineCurve, ProjectiveCurve};
-use ark_ff::{BigInteger, PrimeField, UniformRand};
-use ark_serialize::CanonicalSerialize;
+use ark_bls12_381::{G1Affine, fr::Fr, G1Projective, Fq};
+use ark_ec::AffineRepr;
+use ark_ff::{BigInt, BigInteger, BigInteger256, BigInteger384, Fp384, FpConfig, MontBackend, PrimeField};
+use ark_serialize::{CanonicalDeserialize, CanonicalSerialize};
 use futures::FutureExt;
 use wasm_bindgen::{JsCast, JsError, JsValue};
 use wasm_bindgen::prelude::wasm_bindgen;
@@ -13,47 +14,26 @@ use js_sys::{Array, Error, Function, Object, Reflect, Uint8Array, WebAssembly::{
 }};
 use js_sys::WebAssembly::{instantiate_module, Module};
 
-pub fn generate_msm_inputs<A>(
-    size: usize,
-) -> (
-    Vec<<A::Projective as ProjectiveCurve>::Affine>,
-    Vec<<A::ScalarField as PrimeField>::BigInt>,
-)
-    where
-        A: AffineCurve,
-{
-    let mut rng = ark_std::test_rng();
-    let scalar_vec = (0..size)
-        .map(|_| A::ScalarField::rand(&mut rng).into_repr())
-        .collect();
-    let point_vec = (0..size)
-        .map(|_| A::Projective::rand(&mut rng))
-        .collect::<Vec<_>>();
-    (
-        <A::Projective as ProjectiveCurve>::batch_normalization_into_affine(&point_vec),
-        scalar_vec,
-    )
-}
-
+use wasm_bindgen_test::console_log;
 
 
 const WASM: &[u8] = include_bytes!("./submission.wasm");
 static mut WASM_INSTANCE: Option<Instance> = None;
 
 #[wasm_bindgen]
-pub async unsafe fn init_fast_msm_wasm() {
-    let a: JsValue = JsFuture::from(instantiate_buffer(WASM, &Object::new())).await.unwrap();
-    WASM_INSTANCE = Some(Reflect::get(&a, &"instance".into()).unwrap().dyn_into().unwrap());
+pub async fn init_fast_msm_wasm() {
+    unsafe {
+        let a: JsValue = JsFuture::from(instantiate_buffer(WASM, &Object::new())).await.unwrap();
+        WASM_INSTANCE = Some(Reflect::get(&a, &"instance".into()).unwrap().dyn_into().unwrap());
+    }
 }
 
 use web_sys::console;
 
-pub(crate) unsafe fn compute_msm<A>(
-    point_vec: &Vec<<A::Projective as ProjectiveCurve>::Affine>,
-    scalar_vec: &Vec<<A::ScalarField as PrimeField>::BigInt>,
-) -> Result<Vec<u8>, Error>
-    where
-        A:  AffineCurve,
+pub(crate) unsafe fn compute_msm(
+    point_vec: Vec<G1Projective>,
+    scalar_vec: Vec<Fr>,
+) -> Result<G1Projective, Error>
 {
 
     if WASM_INSTANCE.is_none() {
@@ -71,33 +51,33 @@ pub(crate) unsafe fn compute_msm<A>(
         13
     };
 
-    let msmInitialize = Reflect::get(c.as_ref(), &"msmInitialize".into())?
-        .dyn_into::<Function>()
-        .expect("msmInitialize export wasn't a function");
-    let msmScalarsOffset = Reflect::get(c.as_ref(), &"msmScalarsOffset".into())?
-        .dyn_into::<Function>()
-        .expect("msmScalarsOffset export wasn't a function");
-    let msmPointsOffset = Reflect::get(c.as_ref(), &"msmPointsOffset".into())?
-        .dyn_into::<Function>()
-        .expect("msmPointsOffset export wasn't a function");
-    let msm_run = Reflect::get(c.as_ref(), &"msmRun".into())?
-        .dyn_into::<Function>()
-        .expect("msmRun export wasn't a function");
+    macro_rules! load_wasm_func{
+                ($a:expr, $b:ty)=>{
+                    {
+                        Reflect::get(c.as_ref(), &$a.into())
+                        .unwrap()
+                        .dyn_into::<$b>()
+                        .expect("$a export wasn't a function")
+                    }
+                }
+            }
+
+    let msm_initialize = load_wasm_func!("msmInitialize", Function);
+    let msm_scalars_offset = load_wasm_func!("msmScalarsOffset", Function);
+    let msm_points_offset = load_wasm_func!("msmPointsOffset", Function);
+    let msm_run = load_wasm_func!("msmRun", Function);
 
     let args = Array::new_with_length(4);
     args.set(0, size.into());
     args.set(1, window_bits.into());
     args.set(2, 1024.into());
     args.set(3, 128.into());
-    msmInitialize.apply(&JsValue::undefined(), &args)?;
+    msm_initialize.apply(&JsValue::undefined(), &args)?;
 
-    let mut mem: Memory = Reflect::get(c.as_ref(), &"memory".into())?
-        .dyn_into::<Memory>()
-        .expect("memory export wasn't a `WebAssembly.Memory`");
-
+    let mem: Memory = load_wasm_func!("memory", Memory);
     let buffer = &mem.buffer();
 
-    let scalar_offset: JsValue = msmScalarsOffset.call0(&JsValue::undefined())?;
+    let scalar_offset: JsValue = msm_scalars_offset.call0(&JsValue::undefined())?;
     let scalar_mem: Uint8Array = Uint8Array::new_with_byte_offset_and_length(
         &buffer,
         scalar_offset.as_f64().unwrap() as u32,
@@ -105,28 +85,28 @@ pub(crate) unsafe fn compute_msm<A>(
     );
 
     let mut ptr: u32 = 0;
-    for scalar in (scalar_vec).into_iter() {
-        for s in scalar.to_bytes_le() {
-            // let y = format!("{:?}", s.clone());
-            // console::log_1(&y.into());
+    for scalar in scalar_vec.into_iter() {
+        for s in scalar.into_bigint().to_bytes_le() {
             Uint8Array::set_index(&scalar_mem, ptr, s);
             ptr += 1;
         }
     }
 
-    let point_offset:JsValue = msmPointsOffset.call0(&JsValue::undefined())?;
+    let point_offset:JsValue = msm_points_offset.call0(&JsValue::undefined())?;
     let point_mem: Uint8Array = Uint8Array::new_with_byte_offset_and_length(
         &buffer,
         point_offset.as_f64().unwrap() as u32,
         size as u32 * 96,
     );
 
-    let mut ptr:u32 = 0;
+    let mut ptr: u32 = 0;
     for point in point_vec.into_iter() {
-        let mut point_buffer = Vec::new();
-        let _ = point.serialize_uncompressed(&mut point_buffer);
-        for s in point_buffer {
-
+        let affine = G1Affine::from(point);
+        for s in affine.x.into_bigint().to_bytes_le() {
+            Uint8Array::set_index(&point_mem, ptr, s);
+            ptr += 1;
+        }
+        for s in affine.y.into_bigint().to_bytes_le() {
             Uint8Array::set_index(&point_mem, ptr, s);
             ptr += 1;
         }
@@ -135,15 +115,24 @@ pub(crate) unsafe fn compute_msm<A>(
     let result = msm_run.call0(&JsValue::undefined());
 
     let result_offset: JsValue = result.unwrap();
-    let buffer_new = &mem.buffer();
     let result_mem: Uint8Array = Uint8Array::new_with_byte_offset_and_length(
-        &buffer_new,
+        &buffer,
         result_offset.as_f64().unwrap() as u32,
         96
     );
+    let a1 = result_mem.to_vec()[0..48].to_vec();
+    let a2 = result_mem.to_vec()[48..96].to_vec();
 
-    Ok(result_mem.to_vec())
+    let affine = G1Affine::new(fq_from_bytes(a1), fq_from_bytes(a2));
+    Ok(G1Projective::from(affine))
+}
 
+
+fn fq_from_bytes(bytes: Vec<u8>) -> Fq {
+    let buffer = Cursor::new(bytes.clone());
+    let b = BigInteger384::deserialize_uncompressed(buffer).unwrap();
+    let fq = MontBackend::from_bigint(b).unwrap();
+    fq
 }
 
 #[test]

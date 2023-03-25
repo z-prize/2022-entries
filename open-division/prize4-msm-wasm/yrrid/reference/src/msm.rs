@@ -18,7 +18,6 @@ where
 
     let mut dest: [u8;32] = [0u8;32];
     let _ = getrandom::getrandom(&mut dest).unwrap();
-    wasm_bindgen_test::console_log!("------------{}", format!("{:?}", dest));
     let mut rng: StdRng = rand::SeedableRng::from_seed(dest);
     let scalar_vec = (0..size)
         .map(|_| A::ScalarField::rand(&mut rng).into_repr())

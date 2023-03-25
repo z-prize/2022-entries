@@ -1,0 +1,19 @@
+{
+  "name": "yrr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+
+  "dependencies": {
+    "big-integer": "^1.6.51",
+    "reference": "file:../reference/pkg",
+    "submission_new": "file:../submission_new/pkg"
+  }
+}

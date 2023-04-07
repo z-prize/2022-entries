@@ -1,5 +1,5 @@
 [package]
-name = "reference"
+name = "submission_new"
 version = "0.1.0"
 edition = "2021"
 
@@ -9,22 +9,23 @@ wasm-opt = false
 [lib]
 crate-type = ["cdylib", "lib"]
 
-[[bench]]
-harness = false
-name = "pippenger_msm"
-
 [dependencies]
-ark-bls12-381 = { version = "0.3.0" }
-ark-ec = { version = "0.3.0" }
-ark-ff = { version = "0.3.0" }
-ark-std = { version = "0.3.0" }
+ark-bls12-381 = { version = "0.4.0-alpha" }
+ark-ec = { version = "0.4.0-alpha" }
+ark-ff = { version = "0.4.0-alpha" }
+ark-serialize = "0.4.0-alpha"
+ark-std = { version = "0.4.0-alpha" }
+futures = "0.3.27"
 instant = { version = "0.1", features = ["wasm-bindgen"] }
 js-sys = { version = "0.3.58" }
+serde = { version = "1.0", features = ["derive"] }
+serde-wasm-bindgen = "0.4"
+tokio = { version = "1.10.1", features = ['rt'] }
 wasm-bindgen = { version = "^0.2" }
 wasm-bindgen-test = { version = "^0.3" }
 web-sys = { version = "^0.3", features = ["console"] }
-rand_chacha = { version = "0.3.1" }
-getrandom = {version = "0.2.8", features = ["js"]}
+wasm-bindgen-futures = "0.4.34"
+num-bigint = "0.4.3"
 
 [dev-dependencies]
 criterion = "0.3"

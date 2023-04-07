@@ -1,6 +1,10 @@
 use ark_bls12_381::G1Affine;
 use ark_ec::{msm, AffineCurve, ProjectiveCurve};
 use ark_ff::{PrimeField, UniformRand};
+use ark_std::rand;
+use ark_std::rand::prelude::StdRng;
+use rand_chacha::ChaCha20Rng;
+use rand_chacha::rand_core::SeedableRng;
 
 pub fn generate_msm_inputs<A>(
     size: usize,
@@ -11,7 +15,10 @@ pub fn generate_msm_inputs<A>(
 where
     A: AffineCurve,
 {
-    let mut rng = ark_std::test_rng();
+
+    let mut dest: [u8;32] = [0u8;32];
+    let _ = getrandom::getrandom(&mut dest).unwrap();
+    let mut rng: StdRng = rand::SeedableRng::from_seed(dest);
     let scalar_vec = (0..size)
         .map(|_| A::ScalarField::rand(&mut rng).into_repr())
         .collect();

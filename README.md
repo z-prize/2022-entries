@@ -27,5 +27,6 @@ docker run -d \
 # run the build
 docker exec -it zprize22-msm-gpu bash
 cd /home
+. "$HOME/.cargo/env"
 cargo build --release
 ```

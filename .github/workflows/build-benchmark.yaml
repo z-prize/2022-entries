@@ -21,5 +21,5 @@ jobs:
         env:
           NVCC_PREPEND_FLAGS: "-ccbin=gcc -std=c++17"
         run: |
-          . /root/.cargo/env
+          export PATH="/root/.cargo/bin:$PATH"
           cargo build --release

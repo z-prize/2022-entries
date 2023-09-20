@@ -20,4 +20,5 @@ jobs:
         env:
           NVCC_PREPEND_FLAGS: "-ccbin=gcc -std=c++17"
         run: |
+          nvcc --version
           cargo build --release

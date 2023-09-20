@@ -1,0 +1,23 @@
+name: build-benchmark
+
+on: [workflow_dispatch]
+
+jobs:
+  container-test-job:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io//maya-zk/2022-entries:main
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.github_token }}
+      volumes:
+      - ${{ github.workspace }}/2022-entries:/home
+      options: --user root
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build and test CUDA code
+        env:
+          NVCC_PREPEND_FLAGS: "-ccbin=gcc -std=c++17"
+        run: |
+          cargo build --release

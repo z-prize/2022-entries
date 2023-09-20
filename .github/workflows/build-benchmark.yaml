@@ -19,7 +19,7 @@ jobs:
       - name: Build and test CUDA and Rust code
         env:
           NVCC_PREPEND_FLAGS: "-ccbin=gcc -std=c++17"
+        shell: bash
         run: |
           nvcc --version
           cargo build --release
-        shell: bash

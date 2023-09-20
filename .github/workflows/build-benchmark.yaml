@@ -1,4 +1,4 @@
-name: build-benchmark
+name: Build CUDA-Rust benchmark
 
 on: [workflow_dispatch]
 

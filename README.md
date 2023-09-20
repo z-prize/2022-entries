@@ -19,5 +19,9 @@ docker run -d \
    --mount type=bind,source=$(pwd)/open-division/prize1-msm/prize1a-msm-gpu/combined-top-solutions,target=/home \
    --privileged \
    zprize22-msm-gpu:latest
+
 # run the build
+docker exec -it zprize22-msm-gpu bash
+cd /home
+cargo build --release
 ```

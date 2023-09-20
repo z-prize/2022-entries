@@ -4,7 +4,7 @@
 
 ZPrize 2022 - All qualified entries
 
-> NOTE: this fork's contribution is Docker-backed reproducibility.
+> NOTE: this fork provides a Docker image to easy build, run, and profile MSM GPU implementations.
 
 ## Docker
 

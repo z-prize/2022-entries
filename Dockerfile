@@ -10,7 +10,7 @@ RUN apt-get update && \
     # install clang
     apt-get -y install clang && \
     # install rust
-    curl https://sh.rustup.rs -sSf | sh -s -- -y && \
+    curl https://sh.rustup.rs -sSf | bash -s -- -y && \
     . "$HOME/.cargo/env" && \
     rm -rf /var/lib/apt/lists/*
 

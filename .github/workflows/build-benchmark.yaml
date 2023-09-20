@@ -6,7 +6,7 @@ jobs:
   container-test-job:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io//maya-zk/2022-entries:main
+      image: ghcr.io/maya-zk/2022-entries:main
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.github_token }}

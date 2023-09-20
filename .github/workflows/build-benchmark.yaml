@@ -17,9 +17,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build and test CUDA and Rust code
-        shell: bash
         env:
           NVCC_PREPEND_FLAGS: "-ccbin=gcc -std=c++17"
         run: |
-          nvcc --version
+          . "$HOME/.cargo/env"
           cargo build --release

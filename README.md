@@ -1,3 +1,5 @@
+![Docker build](https://github.comMAYA-ZK/2022-entries/actions/workflows/build-docker.yaml/badge.svg)
+
 # 2022-entries
 
 ## Summary

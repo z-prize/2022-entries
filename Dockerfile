@@ -13,6 +13,6 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 ENV NVCC_PREPEND_FLAGS="-ccbin=gcc -std=c++17" \
-    PATH="/root/.cargo/bin:$PATH"
+    PATH="/root/.cargo/bin:${PATH}"
 
 CMD ["bash"]

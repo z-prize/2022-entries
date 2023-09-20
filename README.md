@@ -11,6 +11,8 @@ ZPrize 2022 - All qualified entries
 The [Docker image](./Dockerfile) allows for building and running `MSM GPU` implementations.
 
 ```bash
+# build and tag the image
+docker build -t zprize22-msm-gpu:latest .
 # start the container
 docker run -d \
    -it \

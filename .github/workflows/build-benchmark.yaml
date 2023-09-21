@@ -16,6 +16,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+          with:
+            toolchain: stable
       - name: Build and test CUDA and Rust code
         shell: bash -l {0}
         env:

@@ -26,6 +26,7 @@ jobs:
           NVCC_PREPEND_FLAGS: "-ccbin=gcc -std=c++17"
         run: |
           echo $PATH
-          rustup show
+          ls /root -a
+          /root/.cargo/bin/rustup show
           cargo --version
 #          /root/.cargo/bin/cargo --version

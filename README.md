@@ -1,5 +1,5 @@
 ![Docker build](https://github.com/MAYA-ZK/2022-entries/actions/workflows/build-docker.yaml/badge.svg)
-![Docker build](https://github.com/MAYA-ZK/2022-entries/actions/workflows/build-benchmark.yaml/badge.svg)
+![Docker build](https://github.com/MAYA-ZK/2022-entries/actions/workflows/test-build.yaml/badge.svg)
 
 
 # 2022-entries
@@ -17,6 +17,7 @@ The [Docker image](./Dockerfile) allows for building and running `MSM GPU` imple
 ```bash
 # build and tag the image
 docker build -t zprize22-msm-gpu:latest .
+
 # start the container
 docker run -d \
    -it \
@@ -27,8 +28,7 @@ docker run -d \
    zprize22-msm-gpu:latest
 
 # run the build
-docker exec -it zprize22-msm-gpu bash
+docker exec -it zprize22-msm-gpu sh
 cd /home
-. "$HOME/.cargo/env"
 cargo build --release
 ```

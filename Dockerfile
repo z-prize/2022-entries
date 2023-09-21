@@ -8,7 +8,7 @@ RUN apt-get update && \
     # install clang
     apt-get -y install clang && \
     # install rust
-    curl https://sh.rustup.rs -sSf | bash -s -- -y && \
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && \
     # cleanup Docker
     rm -rf /var/lib/apt/lists/*
 

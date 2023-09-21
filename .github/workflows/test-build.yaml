@@ -18,6 +18,8 @@ jobs:
         with:
           toolchain: stable
       - name: Build Rust
+        env:
+          NVCC_PREPEND_FLAGS: dupa
         run: |
           cd open-division/prize1-msm/prize1a-msm-gpu/combined-top-solutions
           cargo build

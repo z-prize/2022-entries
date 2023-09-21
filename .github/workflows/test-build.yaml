@@ -19,5 +19,5 @@ jobs:
           toolchain: stable
       - name: Build Rust
         run: |
-          cd ./2022-entries/open-division/prize1-msm/prize1a-msm-gpu/combined-top-solutions
+          cd open-division/prize1-msm/prize1a-msm-gpu/combined-top-solutions
           cargo build

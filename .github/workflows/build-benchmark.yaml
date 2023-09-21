@@ -21,5 +21,6 @@ jobs:
         env:
           NVCC_PREPEND_FLAGS: "-ccbin=gcc -std=c++17"
         run: |
+          echo $PATH
           cargo --version
 #          /root/.cargo/bin/cargo --version
